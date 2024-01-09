@@ -52,7 +52,9 @@
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@lexical/html": "^0.8.0",
+    "@lexical/link": "^0.12.6",
     "@lexical/react": "^0.8.0",
+    "@lexical/utils": "^0.12.6",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-interactions": "^6.5.13",
