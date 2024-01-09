@@ -16,13 +16,14 @@ import {
 } from '@radix-ui/react-icons';
 import { OrderedListIcon, UnorderedListIcon } from './icons';
 import { BannerColorPickerPlugin } from '../glyf-editor/plugins/banner/BannerColorPickerPlugin';
+import TextAlignToolbarPlugin from '../glyf-editor/plugins/text-align-plugin/TextAlignPlugin';
 
 interface ToolbarButtonProps {
   onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
   children: React.ReactNode;
 }
 
-function ToolbarButton(props: ToolbarButtonProps): JSX.Element {
+export function ToolbarButton(props: ToolbarButtonProps): JSX.Element {
   return (
     <Toolbar.Button className="toolbarButton" onClick={props.onClick}>
       {props.children}
@@ -145,6 +146,7 @@ export function ToolbarPlugin(): JSX.Element {
   return (
     <Toolbar.Root className="toolbarRoot">
       <TextFormatToolbarPlugin />
+      <TextAlignToolbarPlugin />
       <HeadingToolbarPlugin />
       <ListToolbarPlugin />
       <BannerToolbarPlugin />
