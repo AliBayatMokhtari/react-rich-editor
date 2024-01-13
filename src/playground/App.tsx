@@ -1,13 +1,13 @@
 import * as React from 'react';
 import './App.css';
-import { RayRichEditor } from 'src/components';
+import { RichTextEditor } from 'src/components';
 
 function App(): JSX.Element {
   return (
     <div className="App">
       <h1 className="editorHeading">Glyf Editor</h1>
       <div className="editorWrapper">
-        <RayRichEditor
+        <RichTextEditor
           onChange={(editorState, htmlContent) => {
             console.log(htmlContent);
           }}

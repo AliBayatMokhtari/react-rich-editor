@@ -1,3 +1,3 @@
-import RayRichEditor from './rich-editor/Editor';
+import RichTextEditor from './rich-editor/Editor';
 
-export { RayRichEditor };
+export { RichTextEditor };

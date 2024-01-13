@@ -1,15 +1,15 @@
-# Welcome to Glyf!
+# Welcome to Rich Text Editor!
 
 ## Getting Started
 
-1. Install the package with `npm install @novin/ray-rich-editor`
+1. Install the package with `npm install @novin/rich-text-editor`
 
-2. Import the GlyfEditor component and use it in your React App:
+2. Import the RichTextEditor component and use it in your React App:
 
 ```
-import { GlyfEditor } from '@novin/ray-rich-editor';
+import { GlyfEditor } from '@novin/rich-text-editor';
 ...
-<GlyfEditor/>
+<RichTextEditor />
 ...
 ```
 
