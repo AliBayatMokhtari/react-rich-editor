@@ -21,7 +21,7 @@ export default defineConfig((configEnv) => ({
     lib: {
       entry: resolve('src', 'components/index.ts'),
       name: 'RayRichEditor',
-      formats: ['es', 'umd'],
+      formats: ['es', 'umd', 'cjs'],
       fileName: (format) => `index.${format}.js`
     },
     rollupOptions: {
