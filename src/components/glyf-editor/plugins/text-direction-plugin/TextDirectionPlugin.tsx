@@ -56,8 +56,6 @@ export class DirectionNode extends ElementNode {
 
     element.dataset.direction = this.__direction;
 
-    console.log({ element });
-
     return element;
   }
 
