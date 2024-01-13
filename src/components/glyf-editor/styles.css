@@ -1,10 +1,8 @@
 .contentEditable {
-  height: 300px;
-  width: 100%;
   padding: 0 8px;
   border: 1px solid;
   border-radius: 4px;
-  overflow-y: scroll;
+  overflow-y: auto;
   outline: none;
 }
 
@@ -21,6 +19,14 @@
 
 .toolbar-wrapper {
   display: flex;
+}
+
+.rtl {
+  direction: rtl;
+}
+
+.ltr {
+  direction: ltr;
 }
 
 .glyf-editor-bold {
@@ -44,20 +50,12 @@
 }
 
 .glyf-editor-h1 {
-  font-size: 48px;
-  text-decoration: underline;
-  font-weight: bold;
 }
 
 .glyf-editor-h2 {
-  font-size: 40px;
-  font-weight: bold;
 }
 
 .glyf-editor-h3 {
-  font-size: 24px;
-  font-weight: normal;
-  text-transform: uppercase;
 }
 
 .glyf-editor-banner {
