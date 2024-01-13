@@ -1,8 +1,8 @@
 {
-  "name": "glyf",
-  "version": "0.2.0",
-  "description": "Just another web text editor.",
-  "author": "Acy Watson",
+  "name": "@novin/ray-rich-editor",
+  "version": "0.0.1",
+  "description": "Andisheh Novin Rayvarz rich text editor",
+  "author": "Ali Bayat Mokhtari",
   "license": "ISC",
   "type": "module",
   "scripts": {
@@ -33,13 +33,13 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/glyf.es.js",
-      "require": "./dist/glyf.umd.js"
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
     },
     "./dist/style.css": "./dist/style.css"
   },
-  "main": "./dist/glyf.umd.js",
-  "module": "./dist/glyf.es.js",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
   "peerDependencies": {
     "@lexical/list": "^0.8.0",
@@ -88,5 +88,8 @@
     "@radix-ui/react-icons": "^1.2.0",
     "@radix-ui/react-popover": "^1.0.5",
     "@radix-ui/react-toolbar": "^1.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
