@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .contentEditable {
   padding: 0 8px;
   border: 1px solid;
