@@ -8,7 +8,7 @@ import { ListPlugin } from '@lexical/react/LexicalListPlugin';
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
 import { HeadingNode } from '@lexical/rich-text';
 import { type EditorState } from 'lexical';
-import { ToolbarPlugin } from '../glyf-toolbar/Toolbar';
+import { ToolbarPlugin } from '../rich-toolbar/Toolbar';
 import { BannerNode, BannerPlugin } from './plugins/banner/BannerPlugin';
 import './styles.css';
 import OnChangePlugin from './plugins/on-change/OnChangePlugin';
