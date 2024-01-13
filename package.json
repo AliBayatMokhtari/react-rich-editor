@@ -1,7 +1,7 @@
 {
   "name": "@novin/rich-text-editor",
   "version": "0.0.1",
-  "description": "Andisheh Novin Rayvarz rich text editor",
+  "description": "Andisheh Novin rich text editor",
   "author": "Ali Bayat Mokhtari",
   "license": "ISC",
   "type": "module",
@@ -13,9 +13,7 @@
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint --fix 'src/**/*.{jsx,ts,tsx}'",
     "format": "prettier --write src//**/*.{ts,tsx,css} --config ./.prettierrc",
-    "prepare": "husky install",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
@@ -46,13 +44,6 @@
     "@babel/core": "^7.19.6",
     "@lexical/html": "^0.8.0",
     "@lexical/react": "^0.8.0",
-    "@storybook/addon-actions": "^6.5.13",
-    "@storybook/addon-essentials": "^6.5.13",
-    "@storybook/addon-interactions": "^6.5.13",
-    "@storybook/addon-links": "^6.5.13",
-    "@storybook/builder-vite": "^0.2.5",
-    "@storybook/react": "^6.5.13",
-    "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
