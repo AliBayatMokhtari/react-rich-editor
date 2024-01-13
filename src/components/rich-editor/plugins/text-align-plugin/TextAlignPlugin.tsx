@@ -7,7 +7,7 @@ import {
 } from '@radix-ui/react-icons';
 import { FORMAT_ELEMENT_COMMAND } from 'lexical';
 import * as React from 'react';
-import { ToolbarButton } from 'src/components/glyf-toolbar/Toolbar';
+import { ToolbarButton } from 'src/components/rich-toolbar/Toolbar';
 
 const Align = {
   left: 'left',

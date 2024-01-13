@@ -1,3 +1,3 @@
-import RayRichEditor from './glyf-editor/Editor';
+import RayRichEditor from './rich-editor/Editor';
 
 export { RayRichEditor };

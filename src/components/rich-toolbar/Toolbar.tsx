@@ -5,7 +5,7 @@ import { $setBlocksType_experimental } from '@lexical/selection';
 import { $isRangeSelection, $getSelection, type TextFormatType } from 'lexical';
 import { $createHeadingNode } from '@lexical/rich-text';
 import { INSERT_ORDERED_LIST_COMMAND, INSERT_UNORDERED_LIST_COMMAND } from '@lexical/list';
-import { INSERT_BANNER_COMMAND } from '../glyf-editor/plugins/banner/BannerPlugin';
+import { INSERT_BANNER_COMMAND } from '../rich-editor/plugins/banner/BannerPlugin';
 import * as Toolbar from '@radix-ui/react-toolbar';
 import {
   StrikethroughIcon,
@@ -15,14 +15,14 @@ import {
   PlusCircledIcon
 } from '@radix-ui/react-icons';
 import { OrderedListIcon, UnorderedListIcon } from './icons';
-import { BannerColorPickerPlugin } from '../glyf-editor/plugins/banner/BannerColorPickerPlugin';
-import TextAlignToolbarPlugin from '../glyf-editor/plugins/text-align-plugin/TextAlignPlugin';
+import { BannerColorPickerPlugin } from '../rich-editor/plugins/banner/BannerColorPickerPlugin';
+import TextAlignToolbarPlugin from '../rich-editor/plugins/text-align-plugin/TextAlignPlugin';
 import {
   type Dir,
   RTL_DIRECTION_NODE_COMMAND,
   LTR_DIRECTION_NODE_COMMAND
-} from '../glyf-editor/plugins/text-direction-plugin/TextDirectionPlugin';
-import { type EditorMode } from '../glyf-editor/Editor';
+} from '../rich-editor/plugins/text-direction-plugin/TextDirectionPlugin';
+import { type EditorMode } from '../rich-editor/Editor';
 
 interface ToolbarButtonProps {
   onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
