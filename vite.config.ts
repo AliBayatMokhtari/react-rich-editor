@@ -14,10 +14,10 @@ export default defineConfig((configEnv) => ({
       include: ['src/components/']
     }),
     react(),
-    tsConfigPaths(),
-    cssInjectedByJsPlugin()
+    tsConfigPaths()
   ],
   build: {
+    cssCodeSplit: false,
     lib: {
       entry: resolve('src', 'components/index.ts'),
       name: 'RayRichEditor',
