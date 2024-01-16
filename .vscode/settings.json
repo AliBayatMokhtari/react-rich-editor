@@ -1,5 +1,8 @@
 {
-  "git.ignoreLimitWarning": true,
-  "editor.lineNumbers": "on",
-  "cSpell.words": ["glyf"]
+	"git.ignoreLimitWarning": true,
+	"editor.lineNumbers": "on",
+	"cSpell.words": ["glyf"],
+	"editor.wordWrapColumn": 80,
+	"editor.rulers": [80],
+	"editor.tabSize": 4
 }
