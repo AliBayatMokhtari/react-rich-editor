@@ -19,11 +19,13 @@ import {
 	DirectionNode,
 	TextDirectionPlugin
 } from './plugins/text-direction-plugin/TextDirectionPlugin';
-import { AutoLinkNode } from '@lexical/link';
+import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin';
 import {
 	AutoLinkPlugin,
-	type LinkMatcher
+	createLinkMatcherWithRegExp
 } from '@lexical/react/LexicalAutoLinkPlugin';
+import LexicalClickableLinkPlugin from '@lexical/react/LexicalClickableLinkPlugin';
+import { AutoLinkNode, LinkNode } from '@lexical/link';
 
 const theme: InitialConfigType['theme'] = {
 	heading: {
@@ -53,26 +55,20 @@ interface EditorProps {
 	mode?: EditorMode;
 }
 
-const URL_REGEX =
+export const URL_REGEX =
 	/(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/;
 
-const MATCHERS: LinkMatcher[] = [
-	(text) => {
-		const result = URL_REGEX.test(text);
-		return result
-			? {
-					index: 0,
-					length: text.length,
-					text,
-					url: text,
-					attributes: {
-						target: '_blank',
-						href: text,
-						rel: 'nofollow'
-					}
-			  }
-			: null;
-	}
+const urlRegExp =
+	/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=+$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=+$,\w]+@)[A-Za-z0-9.-]+)((?:\/[+~%/.\w-_]*)?\??(?:[-+=&;%@.\w_]*)#?(?:[\w]*))?)/;
+
+export function validateUrl(url: string): boolean {
+	return url === 'https://' || urlRegExp.test(url);
+}
+
+const MATCHERS = [
+	createLinkMatcherWithRegExp(URL_REGEX, (text) => {
+		return text;
+	})
 ];
 
 export default function Editor({
@@ -89,6 +85,7 @@ export default function Editor({
 			ListNode,
 			ListItemNode,
 			BannerNode,
+			LinkNode,
 			DirectionNode,
 			AutoLinkNode
 		]
@@ -102,6 +99,8 @@ export default function Editor({
 			<TextDirectionPlugin />
 			<ListPlugin />
 			<AutoLinkPlugin matchers={MATCHERS} />
+			<LinkPlugin validateUrl={validateUrl} />
+			<LexicalClickableLinkPlugin />
 			<RichTextPlugin
 				contentEditable={
 					<ContentEditable

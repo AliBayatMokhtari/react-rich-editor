@@ -1,8 +1,14 @@
 import * as React from 'react';
 import './styles.css';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
-import { $setBlocksType_experimental } from '@lexical/selection';
-import { $isRangeSelection, $getSelection, type TextFormatType } from 'lexical';
+import { $setBlocksType } from '@lexical/selection';
+import {
+	$isRangeSelection,
+	$getSelection,
+	type TextFormatType,
+	$isNodeSelection,
+	$createTextNode
+} from 'lexical';
 import { $createHeadingNode } from '@lexical/rich-text';
 import {
 	INSERT_ORDERED_LIST_COMMAND,
@@ -31,11 +37,16 @@ import LinkToolbarPlugin from '../rich-editor/plugins/link/LinkPlugin';
 interface ToolbarButtonProps {
 	onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
 	children: React.ReactNode;
+	style?: React.CSSProperties;
 }
 
 export function ToolbarButton(props: ToolbarButtonProps): JSX.Element {
 	return (
-		<Toolbar.Button className="toolbarButton" onClick={props.onClick}>
+		<Toolbar.Button
+			className="toolbarButton"
+			onClick={props.onClick}
+			style={props.style}
+		>
 			{props.children}
 		</Toolbar.Button>
 	);
@@ -95,9 +106,7 @@ function HeadingToolbarPlugin(): JSX.Element {
 		editor.update(() => {
 			const selection = $getSelection();
 			if ($isRangeSelection(selection)) {
-				$setBlocksType_experimental(selection, () =>
-					$createHeadingNode(tag)
-				);
+				$setBlocksType(selection, () => $createHeadingNode(tag));
 			}
 		});
 	};
